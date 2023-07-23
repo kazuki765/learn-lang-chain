@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "learn-lang-chain"
+version = "0.1.0"
+description = "LancChainとOPENAI勉強するど！"
+authors = ["kazuki765"]
+readme = "README.md"
+packages = [{include = "learn_lang_chain"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+streamlit = "^1.24"
+pathlib = "^1.0"
+click = "^8.1"
+ffmpeg-python = "^0.2"
+openai = "^0.27"
+langchain = "0.0.235"
+tiktoken = "^0.4"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+ruff = "^0.0.278"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 140
+
+[tool.black]
+line-length = 140

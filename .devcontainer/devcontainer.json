@@ -8,15 +8,22 @@
   "features": {
     "ghcr.io/devcontainers-contrib/features/poetry:2": {}
   },
+  "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+  "mounts": [
+    "source=venv-${devcontainerId},target=${containerWorkspaceFolder}/.venv,type=volume"
+  ],
   "customizations": {
     "vscode": {
       "settings": {
         "editor.renderWhitespace": "all",
+        "python.defaultInterpreterPath": ".venv/bin/python",
+        "python.formatting.provider": "black",
         "[json][jsonc]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode",
           "editor.formatOnSave": true,
           "editor.codeActionsOnSave": {
-            "source.fixAll": true
+            "source.fixAll": true,
+            "source.organizeImports": true
           }
         }
       },
@@ -24,7 +31,11 @@
         "esbenp.prettier-vscode",
         "ms-python.python",
         "njpwerner.autodocstring",
-        "KevinRose.vsc-python-indent"
+        "KevinRose.vsc-python-indent",
+        "bungcip.better-toml",
+        "donjayamanne.python-extension-pack",
+        "VisualStudioExptTeam.intellicode-api-usage-examples",
+        "charliermarsh.ruff"
       ]
     }
   }
